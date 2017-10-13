@@ -27,19 +27,19 @@ public class Target : MonoBehaviour {
 			mxTime = 1.5f; 
 			break;
 		case 4:
-			mxTime = 2.4f; 
+			mxTime = 2f; 
 			break;
 		case 3: 
-			mxTime = 4.3f; 
+			mxTime = 2.5f; 
 			break;
 		case 2: 
-			mxTime = 6.5f; 
+			mxTime = 3.5f; 
 			break;
 		case 1: 
-			mxTime = 9.3f; 
+			mxTime = 5f; 
 			break;
 		case 0:
-			mxTime = 12.1f; 
+			mxTime = 7f; 
 			break;
 		}
 
