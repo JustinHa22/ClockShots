@@ -77,11 +77,11 @@ public class Bullet : MonoBehaviour {
 				desiredSpeed = velchange4;
 				break;
 			case 1: 
-			desiredSpeed = velchange5;
+				desiredSpeed = velchange5;
 				break;
 			case 0:
-			desiredSpeed = velchange6;
-			break;
+				desiredSpeed = velchange6;
+				break;
 		}
 
 		//move the current speed to the desired speed

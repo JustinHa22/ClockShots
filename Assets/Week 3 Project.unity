@@ -194,7 +194,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4233914066733982, guid: 8bf7a7f8812544924b56efe4794fc5bf, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -8.32
+      value: -8.33
       objectReference: {fileID: 0}
     - target: {fileID: 4233914066733982, guid: 8bf7a7f8812544924b56efe4794fc5bf, type: 2}
       propertyPath: m_LocalPosition.y
@@ -223,6 +223,10 @@ Prefab:
     - target: {fileID: 4233914066733982, guid: 8bf7a7f8812544924b56efe4794fc5bf, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1570014102466698, guid: 8bf7a7f8812544924b56efe4794fc5bf, type: 2}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8bf7a7f8812544924b56efe4794fc5bf, type: 2}
@@ -383,6 +387,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &928766073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 928766075}
+  - component: {fileID: 928766074}
+  m_Layer: 0
+  m_Name: SpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &928766074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 928766073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deddec178bf0b485ab487356aa20f8ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 1357995261113152, guid: 8a2679bc50518410f8b3da9d99a5c767, type: 2}
+  xPos: 0
+  yPos: 0
+--- !u!4 &928766075
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 928766073}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.01, y: 0.01, z: -9.994141}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1120691849
 Prefab:
   m_ObjectHideFlags: 0
@@ -485,7 +532,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1570014102466698, guid: 8bf7a7f8812544924b56efe4794fc5bf, type: 2}
       propertyPath: m_Layer
-      value: 11
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61799230751924086, guid: 8bf7a7f8812544924b56efe4794fc5bf,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8bf7a7f8812544924b56efe4794fc5bf, type: 2}

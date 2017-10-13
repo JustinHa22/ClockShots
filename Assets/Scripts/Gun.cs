@@ -23,12 +23,12 @@ public class Gun : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update (){
-
+		//If the left click on the mouse is pressed, shot becomes true instantiating a bullet
 		if (Input.GetMouseButtonDown (0) && bulletCount != 0) {
 			shot = true; 
 		}
-
-		if (Input.GetMouseButtonDown (1)) {
+		//If the right click on the mouse or R is pressed, then reloading becomes true
+		if ((Input.GetMouseButtonDown (1) && bulletCount != 6) || Input.GetKeyDown(KeyCode.R) && bulletCount != 6) {
 			reload = true;
 		}
 
@@ -52,10 +52,6 @@ public class Gun : MonoBehaviour {
 			bulletList.Add (bullet);
 			bulletCount -= 1;
 			shot = false;
-		}
-		//If the player presses R, then get another bullet
-		if (Input.GetKeyDown (KeyCode.R)) {
-			bulletCount += 1; 
 		}
 
 		if (bulletCount >= 6) {
