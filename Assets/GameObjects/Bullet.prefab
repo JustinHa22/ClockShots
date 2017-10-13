@@ -90,10 +90,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 50137107226622196}
-  XshootSpeed: 0.3
-  YshootSpeed: 0.1
-  mxshootSpeed: 0.1
   firePoint: {fileID: 4879680043552274, guid: 395cc1b063d0645fb8499d8350ddd567, type: 2}
+  shootSpeed: 0.3
 --- !u!212 &212663444242898660
 SpriteRenderer:
   m_ObjectHideFlags: 1

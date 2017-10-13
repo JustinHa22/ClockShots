@@ -9,21 +9,23 @@ public class Bullet : MonoBehaviour {
 	Vector3 vel; 
 	Vector3 p;
 
+
 	public Transform firePoint;
 
 	public float shootSpeed; 
 
-	Vector3 velchange1;
-	Vector3 velchange2; 
-	Vector3 velchange3; 
-	Vector3 velchange4; 
-	Vector3 velchange5; 
-	Vector3 velchange6; 
+	float velchange1;
+	float velchange2; 
+	float velchange3; 
+	float velchange4; 
+	float velchange5; 
+	float velchange6; 
 
 	bool hitWall; 
 	bool hitRoof; 
 
 	void Start(){
+
 		//Gets the rigidbody of the bullet
 		rb.GetComponent<Rigidbody2D> ();
 
@@ -32,84 +34,99 @@ public class Bullet : MonoBehaviour {
 		//Creates the velocity by getting the world point position of the mouse - the position of the bullet multiplied by the bullet speed
 		vel = ((Vector2)p - (Vector2)transform.position).normalized * shootSpeed;
 
-		//Goes into the Gun script and makes the script usuable in the bullet script
-		GameObject gun = GameObject.Find ("Gun");
-		Gun gunscript = gun.GetComponent<Gun> ();
+		velchange1 = (shootSpeed * .90f);
 
-			velchange1 = (vel *= .90f);
+		velchange2 = (shootSpeed * .7f);
 
-			velchange2 = (vel *= .75f);
+		velchange3 = (shootSpeed * .50f); 
 
-			velchange3 = (vel *= .60f); 
+		velchange4 = (shootSpeed * .4f);
 
-			velchange4 = (vel *= .45f);
+		velchange5 = (shootSpeed * .3f); 
 
-			velchange5 = (vel *= .30f); 
-
-			velchange6 = (vel *= .20f);
+		velchange6 = (shootSpeed * .2f);
 
 	}
 
 
 	// Update is called once per frame
-	void Update () {
-		//Constatnly changes the position according to the intial velocity made at start
-		transform.position += vel; 
+	void FixedUpdate () {
 
 		//Goes into the Gun script and makes the script usuable in the bullet script
 		GameObject gun = GameObject.Find ("Gun");
 		Gun gunscript = gun.GetComponent<Gun> ();
 
-		if (gunscript.bulletCount == 5) {
-			vel = velchange1;
+
+		float thisBulletSpeed = vel.magnitude;
+		float desiredSpeed = 0;
+		//Switch 
+		switch (gunscript.bulletCount) {
+			case 5:
+				desiredSpeed = velchange1;
+				break;
+			case 4:
+				desiredSpeed = velchange2;
+				break;
+			case 3: 
+				desiredSpeed = velchange3;
+				break;
+			case 2: 
+				desiredSpeed = velchange4;
+				break;
+			case 1: 
+			desiredSpeed = velchange5;
+				break;
+			case 0:
+			desiredSpeed = velchange6;
+			break;
 		}
 
-		if (gunscript.bulletCount == 4) {
-			vel = velchange2;
-		}
-
-		if (gunscript.bulletCount == 3) {
-			vel = velchange3; 
-		}
-
-		if (gunscript.bulletCount == 2) {
-			vel = velchange4;
-		}
-
-		if (gunscript.bulletCount == 1) {
-			vel = velchange5; 
-		}
-
-		if (gunscript.bulletCount == 0) {
-			vel = velchange6;
-		}
+		//move the current speed to the desired speed
+		float newSpeed = Mathf.Lerp(thisBulletSpeed,desiredSpeed,0.1f);//10% of the way to the desired speed
+		vel = vel.normalized * newSpeed; //scale vector to new desired speed;
 
 		//If a wall was hit, reverse the x velocity
-		if (hitWall == true) {
+		if (hitWall) {
 			vel.x *= -1f;
 			hitWall = false;
 		}
 
 		//If the roof was hit, reverse the y velocity
-		if (hitRoof == true) {
-			vel.y *= -1f;
+		if (hitRoof) {
+			vel.y *= -1f; 
 			hitRoof = false;
 		}
+			
 
 		//If the bullet goes out of bounds and its x position is greater than 10 or less than -10, then destroy it
 		if (transform.position.x > 10 || transform.position.x < -10) {
 			Destroy (gameObject);
 		}
+
+		//Constatnly changes the position according to the intial velocity made at start
+		transform.position += vel; 
+
 			
 	}
 
 	void OnCollisionEnter2D(Collision2D coll){
 		if (coll.gameObject.tag == "Wall") {
 			hitWall = true;
+			Debug.Log (hitWall);
 
 		}
 		if (coll.gameObject.tag == "Roof") {
 			hitRoof = true;
 		}
 	}
+
+//	IEnumerator wallBuffer()
+//	{
+//		yield return new WaitForEndOfFrame ();
+//		yield return new WaitForEndOfFrame ();
+//		yield return new WaitForEndOfFrame ();
+//		yield return new WaitForEndOfFrame ();
+//		hitRoof = false;
+//	}
+		
 }

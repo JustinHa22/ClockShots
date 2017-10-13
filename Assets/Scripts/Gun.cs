@@ -14,6 +14,8 @@ public class Gun : MonoBehaviour {
 
 	bool reload; 
 
+	public List<GameObject> bulletList = new List <GameObject>();  
+
 	// Use this for initialization
 	void Start () {
 		bulletCount = 6;
@@ -47,6 +49,7 @@ public class Gun : MonoBehaviour {
 		//If left click is true and player has bullets, then spawn a bullet at the Firepoint and subtract 1 bullet from chamber
 		if (shot == true && bulletCount > 0) {
 			Instantiate (bullet,Firepoint.position, transform.rotation);
+			bulletList.Add (bullet);
 			bulletCount -= 1;
 			shot = false;
 		}
@@ -57,6 +60,10 @@ public class Gun : MonoBehaviour {
 
 		if (bulletCount >= 6) {
 			bulletCount = 6;
+		}
+
+		if (bulletCount <= 0) {
+			bulletCount = 0;
 		}
 
 		if (reload == true) {
