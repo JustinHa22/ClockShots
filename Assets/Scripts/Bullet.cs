@@ -59,8 +59,11 @@ public class Bullet : MonoBehaviour {
 
 		float thisBulletSpeed = vel.magnitude;
 		float desiredSpeed = 0;
-		//Switch 
+		//Switch gets the bulletcount from the Gun script and makes a case for each number of bullets
 		switch (gunscript.bulletCount) {
+			case 6: 
+				desiredSpeed = thisBulletSpeed; 
+				break;
 			case 5:
 				desiredSpeed = velchange1;
 				break;
@@ -103,7 +106,7 @@ public class Bullet : MonoBehaviour {
 			Destroy (gameObject);
 		}
 
-		//Constatnly changes the position according to the intial velocity made at start
+		//Constantly changes the position according to the intial velocity made at start
 		transform.position += vel; 
 
 			
@@ -120,13 +123,4 @@ public class Bullet : MonoBehaviour {
 		}
 	}
 
-//	IEnumerator wallBuffer()
-//	{
-//		yield return new WaitForEndOfFrame ();
-//		yield return new WaitForEndOfFrame ();
-//		yield return new WaitForEndOfFrame ();
-//		yield return new WaitForEndOfFrame ();
-//		hitRoof = false;
-//	}
-		
 }
