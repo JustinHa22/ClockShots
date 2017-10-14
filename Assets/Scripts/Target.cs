@@ -57,10 +57,4 @@ public class Target : MonoBehaviour {
 			Destroy (gameObject);
 		}
 	}
-
-//	void OnTriggerEnter2D(Collider2D trig){
-//		if (trig.gameObject.tag == "Hitbox") {
-//			Destroy (gameObject);
-//		}
-//	}
 }

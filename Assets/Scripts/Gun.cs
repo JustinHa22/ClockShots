@@ -5,6 +5,7 @@ using UnityEngine;
 public class Gun : MonoBehaviour {
 
 	public GameObject bullet; 
+	GameObject shotBullet; 
 
 	public Transform Firepoint;
 
@@ -48,22 +49,27 @@ public class Gun : MonoBehaviour {
 	void FixedUpdate(){
 		//If left click is true and player has bullets, then spawn a bullet at the Firepoint and subtract 1 bullet from chamber
 		if (shot == true && bulletCount > 0) {
-			Instantiate (bullet,Firepoint.position, transform.rotation);
-			bulletList.Add (bullet);
+			shotBullet = Instantiate (bullet,Firepoint.position, transform.rotation);
+			bulletList.Add (shotBullet);
 			bulletCount -= 1;
 			shot = false;
 		}
 
+		//Gun can only hold six bullets
 		if (bulletCount >= 6) {
 			bulletCount = 6;
 		}
 
+		//Can't have less than 0 bullets
 		if (bulletCount <= 0) {
 			bulletCount = 0;
 		}
 
+		//If you reloaded, add one bullet to the chamber and destroy the first bullet that was shot outb
 		if (reload == true) {
 			bulletCount += 1; 
+			Destroy (bulletList [0]);
+			bulletList.RemoveAt (0);
 			reload = false;
 		}
 	}

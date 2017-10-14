@@ -106,6 +106,8 @@ public class Bullet : MonoBehaviour {
 			Destroy (gameObject);
 		}
 
+
+
 		//Constantly changes the position according to the intial velocity made at start
 		transform.position += vel; 
 

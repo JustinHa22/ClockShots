@@ -334,6 +334,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1784409116}
     m_Modifications:
+    - target: {fileID: 114702113594238578, guid: 06e737c8efe7e42a99217b591f1b9f74,
+        type: 2}
+      propertyPath: bulletList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4075512354221594, guid: 06e737c8efe7e42a99217b591f1b9f74, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.017
