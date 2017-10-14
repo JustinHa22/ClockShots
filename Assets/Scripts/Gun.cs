@@ -72,6 +72,13 @@ public class Gun : MonoBehaviour {
 			bulletList.RemoveAt (0);
 			reload = false;
 		}
+		int size = bulletList.Count; 
+		for (int i = 0; i <= size; i++){
+			if (bulletList[i] != true){
+				bulletList.RemoveAt(i); 
+			}
+		}
+
 	}
 
 	float AngleBetweenTwoPoints (Vector3 a, Vector3 b)
