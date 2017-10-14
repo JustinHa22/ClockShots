@@ -50,7 +50,17 @@ public class Target : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D coll){
 		if (coll.gameObject.tag == "Bullet") {
-			Destroy(gameObject); 
+			Destroy (gameObject); 
+		}
+
+		if (coll.gameObject.tag == "Hitbox") {
+			Destroy (gameObject);
 		}
 	}
+
+//	void OnTriggerEnter2D(Collider2D trig){
+//		if (trig.gameObject.tag == "Hitbox") {
+//			Destroy (gameObject);
+//		}
+//	}
 }

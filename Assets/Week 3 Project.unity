@@ -163,6 +163,15 @@ Prefab:
       propertyPath: m_Name
       value: HitboxDown
       objectReference: {fileID: 0}
+    - target: {fileID: 1866905357472998, guid: 54995eae588c840178b8194cc3d1d92d, type: 2}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 61788913109267062, guid: 54995eae588c840178b8194cc3d1d92d,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 54995eae588c840178b8194cc3d1d92d, type: 2}
   m_IsPrefabParent: 0
@@ -492,6 +501,15 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 1.1417292
       objectReference: {fileID: 0}
+    - target: {fileID: 1866905357472998, guid: 54995eae588c840178b8194cc3d1d92d, type: 2}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 61788913109267062, guid: 54995eae588c840178b8194cc3d1d92d,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 54995eae588c840178b8194cc3d1d92d, type: 2}
   m_IsPrefabParent: 0
@@ -550,6 +568,15 @@ Prefab:
       propertyPath: m_Name
       value: HitboxUp
       objectReference: {fileID: 0}
+    - target: {fileID: 1866905357472998, guid: 54995eae588c840178b8194cc3d1d92d, type: 2}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 61788913109267062, guid: 54995eae588c840178b8194cc3d1d92d,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 54995eae588c840178b8194cc3d1d92d, type: 2}
   m_IsPrefabParent: 0
@@ -564,9 +591,10 @@ GameObject:
   - component: {fileID: 914447807}
   - component: {fileID: 914447806}
   - component: {fileID: 914447805}
+  - component: {fileID: 914447808}
   m_Layer: 0
   m_Name: HitboxUp
-  m_TagString: Untagged
+  m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -581,7 +609,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -652,8 +680,28 @@ Transform:
   m_LocalScale: {x: 1.14173, y: 0.6670933, z: 1}
   m_Children: []
   m_Father: {fileID: 1784409116}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &914447808
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 914447804}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7
 --- !u!1 &928766073
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,9 +756,10 @@ GameObject:
   - component: {fileID: 1017490983}
   - component: {fileID: 1017490985}
   - component: {fileID: 1017490984}
+  - component: {fileID: 1017490986}
   m_Layer: 0
   m_Name: HitboxLeft
-  m_TagString: Untagged
+  m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -739,7 +788,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -798,6 +847,26 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!50 &1017490986
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1017490982}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7
 --- !u!1001 &1028803661
 Prefab:
   m_ObjectHideFlags: 0
@@ -852,6 +921,15 @@ Prefab:
     - target: {fileID: 1866905357472998, guid: 54995eae588c840178b8194cc3d1d92d, type: 2}
       propertyPath: m_Name
       value: HitboxLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866905357472998, guid: 54995eae588c840178b8194cc3d1d92d, type: 2}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 61788913109267062, guid: 54995eae588c840178b8194cc3d1d92d,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 54995eae588c840178b8194cc3d1d92d, type: 2}
@@ -1030,9 +1108,10 @@ GameObject:
   - component: {fileID: 1806466098}
   - component: {fileID: 1806466097}
   - component: {fileID: 1806466096}
+  - component: {fileID: 1806466099}
   m_Layer: 0
   m_Name: HitboxDown
-  m_TagString: Untagged
+  m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1047,7 +1126,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1118,8 +1197,28 @@ Transform:
   m_LocalScale: {x: 1.14173, y: 0.6670933, z: 1}
   m_Children: []
   m_Father: {fileID: 1784409116}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1806466099
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1806466095}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7
 --- !u!1 &1862015772
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,9 +1230,10 @@ GameObject:
   - component: {fileID: 1862015775}
   - component: {fileID: 1862015774}
   - component: {fileID: 1862015773}
+  - component: {fileID: 1862015776}
   m_Layer: 0
   m_Name: HitboxRight
-  m_TagString: Untagged
+  m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1148,7 +1248,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1221,6 +1321,26 @@ Transform:
   m_Father: {fileID: 1784409116}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1862015776
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1862015772}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7
 --- !u!1 &1905456786 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1898270520879068, guid: 101e429139b424767b6ef8d41556a525,
