@@ -35,17 +35,17 @@ public class Bullet : MonoBehaviour {
 		//Creates the velocity by getting the world point position of the mouse - the position of the bullet multiplied by the bullet speed
 		vel = ((Vector2)p - (Vector2)transform.position).normalized * shootSpeed;
 
-		velchange1 = (shootSpeed * .90f);
+		velchange1 = (shootSpeed * .9f);
 
 		velchange2 = (shootSpeed * .7f);
 
-		velchange3 = (shootSpeed * .50f); 
+		velchange3 = (shootSpeed * .5f); 
 
-		velchange4 = (shootSpeed * .4f);
+		velchange4 = (shootSpeed * .35f);
 
-		velchange5 = (shootSpeed * .3f); 
+		velchange5 = (shootSpeed * .2f); 
 
-		velchange6 = (shootSpeed * .2f);
+		velchange6 = (shootSpeed * .18f);
 
 	}
 
