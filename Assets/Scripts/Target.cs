@@ -7,6 +7,9 @@ public class Target : MonoBehaviour {
 	float timer; 
 	float mxTime;
 
+	public bool bulletHit; 
+	public bool hitboxHit; 
+
 	// Use this for initialization
 	void Start () {
 		
@@ -46,15 +49,23 @@ public class Target : MonoBehaviour {
 		if (timer > mxTime) {
 			Destroy (gameObject);
 		}
+
+		if (bulletHit) {
+			Destroy (gameObject); 
+		}
+
+		if (hitboxHit) {
+			Destroy (gameObject); 
+		}
 	}
 
 	void OnCollisionEnter2D(Collision2D coll){
 		if (coll.gameObject.tag == "Bullet") {
-			Destroy (gameObject); 
+			bulletHit = true; 
 		}
 
 		if (coll.gameObject.tag == "Hitbox") {
-			Destroy (gameObject);
+			hitboxHit = true; 
 		}
 	}
 }

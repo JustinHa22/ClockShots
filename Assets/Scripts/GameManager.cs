@@ -8,9 +8,12 @@ public class GameManager : MonoBehaviour {
 
 	float slowDown; 
 
+	static int score; 
+
 	// Use this for initialization
 	void Start () {
 		clock = 60;
+		score = 0; 
 	}
 	
 	// Update is called once per frame
@@ -44,6 +47,17 @@ public class GameManager : MonoBehaviour {
 			slowDown = .25f;
 			break; 
 		}
-		Debug.Log (clock);
+
+		GameObject target = GameObject.FindGameObjectWithTag ("Target");
+		Target targetScript = target.GetComponent<Target> ();
+
+		if (targetScript.bulletHit) {
+			score += 1; 
+		}
+
+		if (targetScript.hitboxHit) {
+			score += 1; 
+		}
+		Debug.Log (score);
 	}
 }
