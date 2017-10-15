@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour {
 			break; 
 		}
 
+		Mathf.FloorToInt (clock);
 		clockText.text = "" + clock; 
 
 		GameObject target = GameObject.FindGameObjectWithTag ("Target");
