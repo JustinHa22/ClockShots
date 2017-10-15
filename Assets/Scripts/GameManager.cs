@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
 	int score; 
 
 	public Text scoreText; 
+	public Text clockText; 
 
 	// Use this for initialization
 	void Start () {
@@ -50,6 +51,8 @@ public class GameManager : MonoBehaviour {
 			slowDown = .25f;
 			break; 
 		}
+
+		clockText.text = "" + clock; 
 
 		GameObject target = GameObject.FindGameObjectWithTag ("Target");
 		Target targetScript = target.GetComponent<Target> ();
