@@ -26,22 +26,22 @@ public class GameManager : MonoBehaviour {
 			slowDown = 1f; 
 			break;
 		case 5:
-			slowDown = .9f;
+			slowDown = .875f;
 			break; 
 		case 4:
-			slowDown = .7f;
+			slowDown = .75f;
 			break; 
 		case 3:
-			slowDown = .5f;
+			slowDown = .625f;
 			break; 
 		case 2:
-			slowDown = .35f; 
+			slowDown = .5f; 
 			break;
 		case 1: 
-			slowDown = .2f;
+			slowDown = .375f;
 			break;
 		case 0: 
-			slowDown = .18f;
+			slowDown = .25f;
 			break; 
 		}
 		Debug.Log (clock);
