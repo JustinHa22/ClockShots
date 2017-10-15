@@ -99,6 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1330777890503482, guid: 562da308d4085463f865561d1be94611, type: 2}
   Firepoint: {fileID: 4740679908356994}
+  bulletCount: 0
+  bulletList: []
 --- !u!212 &212849799707974886
 SpriteRenderer:
   m_ObjectHideFlags: 1

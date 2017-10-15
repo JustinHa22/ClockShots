@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -8,7 +9,9 @@ public class GameManager : MonoBehaviour {
 
 	float slowDown; 
 
-	static int score; 
+	int score; 
+
+	public Text scoreText; 
 
 	// Use this for initialization
 	void Start () {
@@ -58,6 +61,7 @@ public class GameManager : MonoBehaviour {
 		if (targetScript.hitboxHit) {
 			score += 1; 
 		}
-		Debug.Log (score);
+
+		scoreText.text = "Score: " + score; 
 	}
 }
