@@ -72,7 +72,11 @@ public class Gun : MonoBehaviour {
 			bulletList.RemoveAt (0);
 			reload = false;
 		}
+
+		//Gets the size of the bulletList arraylist
 		int size = bulletList.Count; 
+
+		//This forloop will look through all of the bullets in bulletList and see if any come back as false. If one does, it removes that slot from the bulletList
 		for (int i = 0; i <= size; i++){
 			if (bulletList[i] != true){
 				bulletList.RemoveAt(i); 
