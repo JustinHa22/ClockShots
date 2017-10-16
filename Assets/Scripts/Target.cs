@@ -8,7 +8,7 @@ public class Target : MonoBehaviour {
 	float mxTime;
 
 	public bool bulletHit; 
-	public bool hitboxHit; 
+	public bool hitboxHit;
 
 	// Use this for initialization
 	void Start () {
@@ -64,7 +64,11 @@ public class Target : MonoBehaviour {
 			bulletHit = true; 
 		}
 
-		if (coll.gameObject.tag == "Hitbox") {
+		if (coll.gameObject.tag == "HitboxX") {
+			hitboxHit = true; 
+		}
+
+		if (coll.gameObject.tag == "HitboxY") {
 			hitboxHit = true; 
 		}
 	}

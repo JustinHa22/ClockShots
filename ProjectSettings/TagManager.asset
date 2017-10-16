@@ -9,7 +9,8 @@ TagManager:
   - Floor
   - Target
   - Bullet
-  - Hitbox
+  - HitboxX
+  - HitboxY
   layers:
   - Default
   - TransparentFX

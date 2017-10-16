@@ -25,6 +25,9 @@ public class Bullet : MonoBehaviour {
 	bool hitRoof; 
 	bool hitTarget; 
 
+	bool hitX; 
+	bool hitY;
+
 	void Start(){
 
 		//Gets the rigidbody of the bullet
@@ -107,6 +110,16 @@ public class Bullet : MonoBehaviour {
 		}
 			
 
+		if (hitX) {
+			vel.x *= -1f; 
+			hitX = false;
+		}
+
+		if (hitY) {
+			vel.y *= -1f; 
+			hitY = false;
+		}
+
 		//If the bullet goes out of bounds and its x position is greater than 10 or less than -10, then destroy it
 		if (transform.position.x > 10 || transform.position.x < -10) {
 			gunscript.bulletCount += 1; 
@@ -115,8 +128,6 @@ public class Bullet : MonoBehaviour {
 
 		//Constantly changes the position according to the intial velocity made at start
 		transform.position += vel; 
-
-			
 	}
 
 	void OnCollisionEnter2D(Collision2D coll){
@@ -133,6 +144,14 @@ public class Bullet : MonoBehaviour {
 
 		if (coll.gameObject.tag == "Target") {
 			hitTarget = true;
+		}
+
+		if (coll.gameObject.tag == "HitboxX") {
+			hitX = true; 
+		}
+
+		if (coll.gameObject.tag == "HitboxY") {
+			hitY = true; 
 		}
 	}
 

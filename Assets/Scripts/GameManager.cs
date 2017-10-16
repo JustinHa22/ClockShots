@@ -51,9 +51,8 @@ public class GameManager : MonoBehaviour {
 			slowDown = .25f;
 			break; 
 		}
-
-		Mathf.FloorToInt (clock);
-		clockText.text = "" + clock; 
+			
+		clockText.text = "" + Mathf.FloorToInt(clock); 
 
 		GameObject target = GameObject.FindGameObjectWithTag ("Target");
 		Target targetScript = target.GetComponent<Target> ();

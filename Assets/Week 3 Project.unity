@@ -204,6 +204,22 @@ Prefab:
       propertyPath: jumpSpd
       value: 0.15
       objectReference: {fileID: 0}
+    - target: {fileID: 1142558530061644, guid: 45268f8140dc04bffa9764021acc7528, type: 2}
+      propertyPath: m_TagString
+      value: HitboxX
+      objectReference: {fileID: 0}
+    - target: {fileID: 1952041881171392, guid: 45268f8140dc04bffa9764021acc7528, type: 2}
+      propertyPath: m_TagString
+      value: HitboxX
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303408303571292, guid: 45268f8140dc04bffa9764021acc7528, type: 2}
+      propertyPath: m_TagString
+      value: HitboxY
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575394934121462, guid: 45268f8140dc04bffa9764021acc7528, type: 2}
+      propertyPath: m_TagString
+      value: HitboxY
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45268f8140dc04bffa9764021acc7528, type: 2}
   m_IsPrefabParent: 0
