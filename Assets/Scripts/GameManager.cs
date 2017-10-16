@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour {
 		Movement playerScript = player.GetComponent<Movement> ();
 
 		if (playerScript.playerDead) {
-			GameOver ();
+			//GameOver ();
 		}
 
 		if (restart) {
