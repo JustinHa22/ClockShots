@@ -19,6 +19,8 @@ public class Movement : MonoBehaviour {
 
 	bool grounded;
 
+	public bool playerDead; 
+
 	Vector2[] debugPts;
 
 	// Use this for initialization
@@ -97,6 +99,12 @@ public class Movement : MonoBehaviour {
 
 		if (grounded) {
 			vel.y = 0;
+		}
+	}
+
+	void OnCollisionEnter2D (Collision2D coll){
+		if (coll.gameObject.tag == "Bullet") {
+			playerDead = true; 
 		}
 	}
 }
