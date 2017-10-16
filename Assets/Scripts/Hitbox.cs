@@ -46,14 +46,9 @@ public class Hitbox : MonoBehaviour {
 	}
 
 	IEnumerator HitboxActive(){
-		yield return new WaitForEndOfFrame ();
-		yield return new WaitForEndOfFrame ();
-		yield return new WaitForEndOfFrame ();
-		yield return new WaitForEndOfFrame ();
-		yield return new WaitForEndOfFrame ();
-		yield return new WaitForEndOfFrame ();
-		yield return new WaitForEndOfFrame ();
-		yield return new WaitForEndOfFrame ();
+		for (int i = 0; i < 8; i++) {
+			yield return new WaitForFixedUpdate();
+		}
 		hitboxRight.SetActive (false);
 		hitboxLeft.SetActive (false);
 		hitboxUp.SetActive (false);
