@@ -9,7 +9,6 @@ public class Bullet : MonoBehaviour {
 	Vector3 vel; 
 	Vector3 p;
 
-
 	public Transform firePoint;
 
 	public float shootSpeed; 
@@ -59,7 +58,6 @@ public class Bullet : MonoBehaviour {
 		//Goes into the Gun script and makes the script usuable in the bullet script
 		GameObject gun = GameObject.Find ("Gun");
 		Gun gunscript = gun.GetComponent<Gun> ();
-
 
 		float thisBulletSpeed = vel.magnitude;
 		float desiredSpeed = 0;
