@@ -53,11 +53,17 @@ public class Bullet : MonoBehaviour {
 
 		gameObject.layer = LayerMask.NameToLayer("Gun");
 
+		inactiveTimer = 0f; 
 	}
 
 
 	// Update is called once per frame
 	void FixedUpdate () {
+
+		inactiveTimer += 1f; 
+		if (inactiveTimer > 2f) {
+			gameObject.layer = LayerMask.NameToLayer ("Bullet");
+		}
 
 		//Goes into the Gun script and makes the script usuable in the bullet script
 		GameObject gun = GameObject.Find ("Gun");
