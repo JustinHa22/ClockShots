@@ -10,6 +10,8 @@ public class Target : MonoBehaviour {
 	public bool bulletHit; 
 	public bool hitboxHit;
 
+	public GameObject particles; 
+
 	// Use this for initialization
 	void Start () {
 		
@@ -51,10 +53,12 @@ public class Target : MonoBehaviour {
 		}
 
 		if (bulletHit) {
+			Instantiate (particles, transform.position, Quaternion.identity); 
 			Destroy (gameObject); 
 		}
 
 		if (hitboxHit) {
+			Instantiate (particles, transform.position, Quaternion.identity); 
 			Destroy (gameObject); 
 		}
 	}

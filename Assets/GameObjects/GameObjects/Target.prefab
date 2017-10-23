@@ -91,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletHit: 0
   hitboxHit: 0
+  particles: {fileID: 1742631329006010, guid: ebdc604e5fd104927a53e05f934493ae, type: 2}
 --- !u!212 &212924396824555492
 SpriteRenderer:
   m_ObjectHideFlags: 1

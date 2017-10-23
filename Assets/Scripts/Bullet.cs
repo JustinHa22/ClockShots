@@ -102,14 +102,12 @@ public class Bullet : MonoBehaviour {
 
 		//If a wall was hit, reverse the x velocity
 		if (hitWall) {
-			gameObject.layer = LayerMask.NameToLayer ("Bullet");
 			vel.x *= -1f;
 			hitWall = false;
 		}
 
 		//If the roof was hit, reverse the y velocity
 		if (hitRoof) {
-			gameObject.layer = LayerMask.NameToLayer ("Bullet");
 			vel.y *= -1f; 
 			hitRoof = false;
 		}
