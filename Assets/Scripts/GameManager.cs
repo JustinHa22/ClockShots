@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour {
 
 		//If player is hit with a bullet, Game Over
 		if (playerScript.playerDead) {
-			//GameOver ();
+			GameOver ();
 		}
 
 		//If the restart is true and Escape is pressed, load the scene again and return Time.timeScale back to 1

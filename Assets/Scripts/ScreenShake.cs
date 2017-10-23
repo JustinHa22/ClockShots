@@ -26,7 +26,7 @@ public class ScreenShake : MonoBehaviour {
 
 	}
 
-	public void shake(){
+	public void Shake(){
 		Vector3 shakeSideDirection = transform.right * Mathf.Sin( Time.time * 27f) * 0.16f;
 		Vector3 shakeUpDirection = transform.up * Mathf.Sin( Time.time * 23f) * 0.16f;
 		transform.localPosition = startPosition + (shakeSideDirection + shakeUpDirection) * shakeStrength;
