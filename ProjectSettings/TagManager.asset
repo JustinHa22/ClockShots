@@ -11,6 +11,8 @@ TagManager:
   - Bullet
   - HitboxX
   - HitboxY
+  - Hitbox
+  - Demo
   layers:
   - Default
   - TransparentFX
