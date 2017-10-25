@@ -154,8 +154,6 @@ public class Bullet : MonoBehaviour {
 
 		if (coll.gameObject.tag == "Wall") {
 			hitWall = true;
-			Debug.Log (hitWall);
-
 		}
 
 		if (coll.gameObject.tag == "Roof") {

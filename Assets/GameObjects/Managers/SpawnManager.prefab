@@ -52,5 +52,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1357995261113152, guid: 8a2679bc50518410f8b3da9d99a5c767, type: 2}
+  gm: {fileID: 0}
   xPos: 0
   yPos: 0

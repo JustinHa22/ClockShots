@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
-	static bool startGame = false; 
+	public static bool startGame = false; 
+	public bool gameStart; 
 
 	public Text ClockShots; 
 	public Text startGameText; 
-
 
 	float clock; 
 
@@ -42,6 +42,10 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		if (startGame == false) {
+			ClockShots.text = "Clock Shots"; 
+			startGameText.text = "Press Space to Start";
+		}
 		audioSource = GetComponent<AudioSource> ();
 		//Sets the clock to 60 secs when the game starts
 		clock = 60;
@@ -55,12 +59,11 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 
 		if (startGame == false) {
-			ClockShots.text = "Clock Shots"; 
-			startGameText.text = "Press Space to Start"; 
 			Time.timeScale = 0f; 
 		}
 
 		if (Input.GetKeyDown(KeyCode.Space) && startGame == false){
+			gameStart = true; 
 			Time.timeScale = 1f; 
 			ClockShots.text = ""; 
 			startGameText.text = ""; 
@@ -103,7 +106,9 @@ public class GameManager : MonoBehaviour {
 		}
 
 		//The clock will read the lowest int of the current time
-		clockText.text = "" + Mathf.FloorToInt(clock); 
+		if (startGame == true) {
+			clockText.text = "" + Mathf.FloorToInt (clock); 
+		}
 
 		//Finds the target in the scene and gets the scripts
 		GameObject target = GameObject.FindGameObjectWithTag ("Target");
@@ -135,7 +140,9 @@ public class GameManager : MonoBehaviour {
 		}
 
 		//The score will show as the score earned this round
-		scoreText.text = "Score: " + score;  
+		if (startGame == true) {
+			scoreText.text = "Score: " + score;  
+		}
 
 		//If the score is greater than the highscore, than set the PlayerPrefs to the score
 		if (score > highScore) {
@@ -160,7 +167,7 @@ public class GameManager : MonoBehaviour {
 
 		//If the restart is true and Escape is pressed, load the scene again and return Time.timeScale back to 1
 		if (restart) {
-			if (Input.GetKeyDown (KeyCode.Escape)) {
+			if (Input.GetKeyDown (KeyCode.Space)) {
 				SceneManager.LoadScene(0);
 				Time.timeScale = 1; 
 			}
@@ -173,7 +180,7 @@ public class GameManager : MonoBehaviour {
 		gameOverText.text = "Game Over"; 
 		highScoreText.text = "Highscore: " + highScore; 
 		clockText.text = "";
-		restartText.text = "Press Esc to Restart"; 
+		restartText.text = "Press Space to Restart"; 
 		restart = true; 
 	}
 

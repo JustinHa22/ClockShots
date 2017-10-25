@@ -6,6 +6,8 @@ public class SpawnManager : MonoBehaviour {
 
 	public GameObject Target; 
 
+	public GameObject gm; 
+
 	public float xPos; 
 	public float yPos; 
 
@@ -17,13 +19,12 @@ public class SpawnManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		xPos = Random.Range (-7.46f, 7.49f);
-		yPos = Random.Range (-4f, 4.4f);
+			xPos = Random.Range (-7.46f, 7.49f);
+			yPos = Random.Range (-4f, 4.4f);
 
-		Vector2 spawnPos = new Vector2 (xPos, yPos);
-
-		if (GameObject.FindGameObjectWithTag ("Target") == null) {
-			Instantiate (Target, spawnPos, Quaternion.identity);
+			Vector2 spawnPos = new Vector2 (xPos, yPos);
+			if (GameObject.FindGameObjectWithTag ("Target") == null) {
+				Instantiate (Target, spawnPos, Quaternion.identity);
 		}
 	}
 }
