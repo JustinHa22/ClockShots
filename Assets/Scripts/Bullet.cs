@@ -20,8 +20,9 @@ public class Bullet : MonoBehaviour {
 	float velchange5; 
 	float velchange6; 
 
-	bool hitWall; 
-	bool hitRoof; 
+	public bool hitWall; 
+	public bool hitRoof; 
+	public bool hitsound; 
 	bool hitTarget; 
 
 	bool hitX; 
@@ -29,7 +30,12 @@ public class Bullet : MonoBehaviour {
 
 	float inactiveTimer; 
 
+	public AudioSource audioSource; 
+	public AudioClip hitWallSound; 
+
 	void Start(){
+
+		audioSource = GetComponent<AudioSource> (); 
 
 		//Gets the rigidbody of the bullet
 		rb.GetComponent<Rigidbody2D> ();
@@ -102,12 +108,14 @@ public class Bullet : MonoBehaviour {
 
 		//If a wall was hit, reverse the x velocity
 		if (hitWall) {
+			audioSource.PlayOneShot (hitWallSound);
 			vel.x *= -1f;
 			hitWall = false;
 		}
 
 		//If the roof was hit, reverse the y velocity
 		if (hitRoof) {
+			audioSource.PlayOneShot (hitWallSound); 
 			vel.y *= -1f; 
 			hitRoof = false;
 		}

@@ -142,3 +142,4 @@ MonoBehaviour:
   targetHit: {fileID: 8300000, guid: c8c9026d9fe0149bab80b87373a00dcf, type: 3}
   shotSound: {fileID: 8300000, guid: b54b0f0cb06364adc930a1b03cbbef9b, type: 3}
   slowShotSound: {fileID: 8300000, guid: 272349c22122b4a6da265b4d73010dc7, type: 3}
+  hitWallSound: {fileID: 8300000, guid: 9bd29005af402421a8fceae552c280b0, type: 3}

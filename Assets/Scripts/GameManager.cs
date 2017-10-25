@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour {
 	public AudioClip targetHit; 
 	public AudioClip shotSound; 
 	public AudioClip slowShotSound; 
+	public AudioClip hitWallSound; 
 
 	// Use this for initialization
 	void Start () {
@@ -104,6 +105,14 @@ public class GameManager : MonoBehaviour {
 		} else if (gunscript.shotsound && gunscript.bulletCount <= 3f) {
 			audioSource.PlayOneShot (slowShotSound, 1f); 
 			gunscript.shotsound = false;
+		}
+
+		GameObject walls = GameObject.FindGameObjectWithTag ("Wall");
+		Walls wallScript = walls.GetComponent<Walls> ();
+
+		if (wallScript.hitSound) {
+			audioSource.PlayOneShot (hitWallSound); 
+			wallScript.hitSound = false;
 		}
 
 		//The score will show as the score earned this round
