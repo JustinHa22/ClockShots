@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//Sets the clock to 60 secs when the game starts
-		clock = 60;
+		clock = 61;
 		//Score starts at 0 
 		score = 0; 
 		//Turns off restart function so the game can be played
@@ -128,6 +128,7 @@ public class GameManager : MonoBehaviour {
 		Time.timeScale = 0;
 		gameOverText.text = "Game Over"; 
 		highScoreText.text = "Highscore: " + highScore; 
+		clockText.text = "";
 		restartText.text = "Press Esc to Restart"; 
 		restart = true; 
 	}
