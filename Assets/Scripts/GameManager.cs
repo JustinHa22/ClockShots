@@ -27,8 +27,11 @@ public class GameManager : MonoBehaviour {
 
 	bool restart; 
 
+	public AudioSource audioSource; 
+	public AudioClip targetHit; 
 	// Use this for initialization
 	void Start () {
+		audioSource = GetComponent<AudioSource> ();
 		//Sets the clock to 60 secs when the game starts
 		clock = 61;
 		//Score starts at 0 
@@ -83,10 +86,12 @@ public class GameManager : MonoBehaviour {
 
 		//If target was hit with a bullet, add 1 point
 		if (targetScript.bulletHit) {
+			audioSource.PlayOneShot (targetHit, .3f);
 			score += 1; 
 		}
 		//If target was hit with a hitbox/melee attack, add 1 point
 		if (targetScript.hitboxHit) {
+			audioSource.PlayOneShot (targetHit, .3f);
 			score += 1; 
 		}
 
