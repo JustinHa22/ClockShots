@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
+	static bool startGame = false; 
+
+	public Text ClockShots; 
+	public Text startGameText; 
+
+
 	float clock; 
 
 	float slowDown; 
@@ -38,7 +44,7 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		audioSource = GetComponent<AudioSource> ();
 		//Sets the clock to 60 secs when the game starts
-		clock = 61;
+		clock = 60;
 		//Score starts at 0 
 		score = 0; 
 		//Turns off restart function so the game can be played
@@ -47,6 +53,20 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (startGame == false) {
+			ClockShots.text = "Clock Shots"; 
+			startGameText.text = "Press Space to Start"; 
+			Time.timeScale = 0f; 
+		}
+
+		if (Input.GetKeyDown(KeyCode.Space) && startGame == false){
+			Time.timeScale = 1f; 
+			ClockShots.text = ""; 
+			startGameText.text = ""; 
+			startGame = true; 
+		}
+
 		//Sets the highscore to the highest score stored in PlayerPrefs
 		highScore = PlayerPrefs.GetInt (highscoreKey); 
 
@@ -109,8 +129,9 @@ public class GameManager : MonoBehaviour {
 			gunscript.shotsound = false;
 		}
 
-		if (gunscript.reload) {
+		if (gunscript.reloadSound) {
 			audioSource.PlayOneShot (reloadSound, 1f);
+			gunscript.reloadSound = false;
 		}
 
 		//The score will show as the score earned this round

@@ -132,6 +132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b35934b9708493c8a72de2f178e214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClockShots: {fileID: 0}
+  startGameText: {fileID: 0}
   scoreText: {fileID: 0}
   clockText: {fileID: 0}
   gameOver: 0

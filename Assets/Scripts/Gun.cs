@@ -15,6 +15,7 @@ public class Gun : MonoBehaviour {
 	public bool shotsound; 
 
 	public bool reload; 
+	public bool reloadSound; 
 
 	public List<GameObject> bulletList = new List <GameObject>();  
 
@@ -25,7 +26,6 @@ public class Gun : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update (){
-		Debug.Log (shot);
 		//If the left click on the mouse is pressed, shot becomes true instantiating a bullet
 		if (Input.GetMouseButtonDown (0) && bulletCount != 0) {			
 			shot = true; 
@@ -70,7 +70,8 @@ public class Gun : MonoBehaviour {
 
 		//If you reloaded, add one bullet to the chamber and destroy the first bullet that was shot outb
 		if (reload == true) {
-			bulletCount += 1; 
+			bulletCount += 1;
+			reloadSound = true; 
 			Destroy (bulletList [0]);
 			bulletList.RemoveAt (0);
 			reload = false;
