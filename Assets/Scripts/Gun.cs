@@ -11,9 +11,9 @@ public class Gun : MonoBehaviour {
 
 	public int bulletCount;
 
-	bool shot; 
+	public bool shot; 
 
-	bool reload; 
+	public bool reload; 
 
 	public List<GameObject> bulletList = new List <GameObject>();  
 

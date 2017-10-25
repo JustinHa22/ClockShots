@@ -187,6 +187,16 @@ Prefab:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 146384075}
+    - target: {fileID: 114895039755876122, guid: 95894571fb80b42bd9cef37ac52f6737,
+        type: 2}
+      propertyPath: shotSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b54b0f0cb06364adc930a1b03cbbef9b, type: 3}
+    - target: {fileID: 114895039755876122, guid: 95894571fb80b42bd9cef37ac52f6737,
+        type: 2}
+      propertyPath: slowShotSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 272349c22122b4a6da265b4d73010dc7, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 95894571fb80b42bd9cef37ac52f6737, type: 2}
   m_IsPrefabParent: 0

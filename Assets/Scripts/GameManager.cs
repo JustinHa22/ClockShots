@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour {
 
 	public AudioSource audioSource; 
 	public AudioClip targetHit; 
+	public AudioClip shotSound; 
+	public AudioClip slowShotSound; 
+
 	// Use this for initialization
 	void Start () {
 		audioSource = GetComponent<AudioSource> ();
@@ -93,6 +96,12 @@ public class GameManager : MonoBehaviour {
 		if (targetScript.hitboxHit) {
 			audioSource.PlayOneShot (targetHit, .3f);
 			score += 1; 
+		}
+
+		if (gunscript.shot && gunscript.bulletCount > 3f) {
+			audioSource.PlayOneShot (shotSound, 1f); 
+		} else if (gunscript.shot && gunscript.bulletCount <= 3f) {
+			audioSource.PlayOneShot (slowShotSound, 1f); 
 		}
 
 		//The score will show as the score earned this round
