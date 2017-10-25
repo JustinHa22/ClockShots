@@ -12,6 +12,7 @@ public class Gun : MonoBehaviour {
 	public int bulletCount;
 
 	public bool shot; 
+	public bool shotsound; 
 
 	public bool reload; 
 
@@ -24,6 +25,7 @@ public class Gun : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update (){
+		Debug.Log (shot);
 		//If the left click on the mouse is pressed, shot becomes true instantiating a bullet
 		if (Input.GetMouseButtonDown (0) && bulletCount != 0) {
 			shot = true; 
@@ -49,6 +51,7 @@ public class Gun : MonoBehaviour {
 	void FixedUpdate(){
 		//If left click is true and player has bullets, then spawn a bullet at the Firepoint and subtract 1 bullet from chamber
 		if (shot == true && bulletCount > 0) {
+			shotsound = true; 
 			shotBullet = Instantiate (bullet,Firepoint.position, transform.rotation);
 			bulletList.Add (shotBullet);
 			bulletCount -= 1;

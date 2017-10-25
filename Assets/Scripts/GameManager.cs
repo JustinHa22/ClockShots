@@ -98,10 +98,12 @@ public class GameManager : MonoBehaviour {
 			score += 1; 
 		}
 
-		if (gunscript.shot && gunscript.bulletCount > 3f) {
+		if (gunscript.shotsound && gunscript.bulletCount > 3f) {
 			audioSource.PlayOneShot (shotSound, 1f); 
-		} else if (gunscript.shot && gunscript.bulletCount <= 3f) {
+			gunscript.shotsound = false;
+		} else if (gunscript.shotsound && gunscript.bulletCount <= 3f) {
 			audioSource.PlayOneShot (slowShotSound, 1f); 
+			gunscript.shotsound = false;
 		}
 
 		//The score will show as the score earned this round
