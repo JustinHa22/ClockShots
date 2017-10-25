@@ -101,10 +101,10 @@ public class GameManager : MonoBehaviour {
 		}
 
 		//Goes into the gun script and plays the the gunshot sound effect when gun is shot. Also changes the audio clip depending on the bulletCount
-		if (gunscript.shotsound && gunscript.bulletCount > 3f) {
+		if (gunscript.shotsound && gunscript.bulletCount > 2f) {
 			audioSource.PlayOneShot (shotSound, 1f); 
 			gunscript.shotsound = false;
-		} else if (gunscript.shotsound && gunscript.bulletCount <= 3f) {
+		} else if (gunscript.shotsound && gunscript.bulletCount <= 2f) {
 			audioSource.PlayOneShot (slowShotSound, 1f); 
 			gunscript.shotsound = false;
 		}
