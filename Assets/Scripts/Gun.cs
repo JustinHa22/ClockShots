@@ -27,7 +27,7 @@ public class Gun : MonoBehaviour {
 	void Update (){
 		Debug.Log (shot);
 		//If the left click on the mouse is pressed, shot becomes true instantiating a bullet
-		if (Input.GetMouseButtonDown (0) && bulletCount != 0) {
+		if (Input.GetMouseButtonDown (0) && bulletCount != 0) {			
 			shot = true; 
 		}
 		//If the right click on the mouse or R is pressed, then reloading becomes true
