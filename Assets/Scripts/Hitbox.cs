@@ -19,25 +19,25 @@ public class Hitbox : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if ((Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift)) || (Input.GetKey(KeyCode.D) && Input.GetMouseButton(1)) && canAttack == true) {
+		if ((Input.GetKey(KeyCode.D) && Input.GetKeyDown(KeyCode.LeftShift)) || (Input.GetKeyDown(KeyCode.RightArrow))  && canAttack == true) {
 			hitboxRight.SetActive (true);
 			canAttack = false;
 			StartCoroutine (HitboxActive ());
 		}
 
-		if ((Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift)) || (Input.GetKey(KeyCode.A) && Input.GetMouseButton(1)) && canAttack == true) {
+		if ((Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.LeftShift)) || (Input.GetKeyDown(KeyCode.LeftArrow)) && canAttack == true) {
 			hitboxLeft.SetActive (true);
 			canAttack = false;
 			StartCoroutine (HitboxActive ());
 		}
 
-		if ((Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift)) || (Input.GetKey(KeyCode.W) && Input.GetMouseButton(1)) && canAttack == true) {
+		if ((Input.GetKey(KeyCode.W) && Input.GetKeyDown(KeyCode.LeftShift)) || (Input.GetKeyDown(KeyCode.UpArrow)) && canAttack == true) {
 			hitboxUp.SetActive (true); 
 			canAttack = false;
 			StartCoroutine (HitboxActive ());
 		}
 
-		if ((Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift)) || (Input.GetKey(KeyCode.S) && Input.GetMouseButton(1))&& canAttack == true) {
+		if ((Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.LeftShift)) || (Input.GetKeyDown(KeyCode.DownArrow)) && canAttack == true) {
 			hitboxDown.SetActive (true);
 			canAttack = false;
 			StartCoroutine (HitboxActive ());

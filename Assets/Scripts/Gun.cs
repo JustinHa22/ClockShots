@@ -29,7 +29,7 @@ public class Gun : MonoBehaviour {
 			shot = true; 
 		}
 		//If the right click on the mouse or R is pressed, then reloading becomes true
-		if ( Input.GetKeyDown(KeyCode.R) && bulletCount != 6) {
+		if ((Input.GetMouseButtonDown (1) && bulletCount != 6) || Input.GetKeyDown(KeyCode.R) && bulletCount != 6) {
 			reload = true;
 		}
 
