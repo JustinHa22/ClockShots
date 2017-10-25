@@ -417,23 +417,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc3ff6d4e99e34045bf5571257f6b6b4, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &295198898 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1570014102466698, guid: 8bf7a7f8812544924b56efe4794fc5bf,
-    type: 2}
-  m_PrefabInternal: {fileID: 310898270}
---- !u!114 &295198903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 295198898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88a41738ffb0482990f5e3d2158ce66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitSound: 0
 --- !u!1001 &310898270
 Prefab:
   m_ObjectHideFlags: 0
@@ -505,35 +488,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
---- !u!114 &425585755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 425585750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88a41738ffb0482990f5e3d2158ce66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitSound: 0
---- !u!1 &469004061 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1570014102466698, guid: 8bf7a7f8812544924b56efe4794fc5bf,
-    type: 2}
-  m_PrefabInternal: {fileID: 1401514137}
---- !u!114 &469004066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 469004061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88a41738ffb0482990f5e3d2158ce66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitSound: 0
 --- !u!1 &514629248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,18 +1312,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &1905456791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1905456786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88a41738ffb0482990f5e3d2158ce66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitSound: 0
 --- !u!224 &1977027292 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224685578726223384, guid: 32e2a59eb8858427da362a4ef66d63c7,

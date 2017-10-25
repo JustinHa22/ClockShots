@@ -107,14 +107,6 @@ public class GameManager : MonoBehaviour {
 			gunscript.shotsound = false;
 		}
 
-		GameObject walls = GameObject.FindGameObjectWithTag ("Wall");
-		Walls wallScript = walls.GetComponent<Walls> ();
-
-		if (wallScript.hitSound) {
-			audioSource.PlayOneShot (hitWallSound); 
-			wallScript.hitSound = false;
-		}
-
 		//The score will show as the score earned this round
 		scoreText.text = "Score: " + score;  
 
