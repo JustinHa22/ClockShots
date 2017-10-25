@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour {
 	public AudioClip shotSound; 
 	public AudioClip slowShotSound; 
 	public AudioClip hitWallSound; 
+	public AudioClip reloadSound; 
 
 	// Use this for initialization
 	void Start () {
@@ -99,12 +100,17 @@ public class GameManager : MonoBehaviour {
 			score += 1; 
 		}
 
+		//Goes into the gun script and plays the the gunshot sound effect when gun is shot. Also changes the audio clip depending on the bulletCount
 		if (gunscript.shotsound && gunscript.bulletCount > 3f) {
 			audioSource.PlayOneShot (shotSound, 1f); 
 			gunscript.shotsound = false;
 		} else if (gunscript.shotsound && gunscript.bulletCount <= 3f) {
 			audioSource.PlayOneShot (slowShotSound, 1f); 
 			gunscript.shotsound = false;
+		}
+
+		if (gunscript.reload) {
+			audioSource.PlayOneShot (reloadSound, 1f);
 		}
 
 		//The score will show as the score earned this round

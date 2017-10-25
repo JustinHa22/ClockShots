@@ -120,18 +120,22 @@ public class Bullet : MonoBehaviour {
 			hitRoof = false;
 		}
 
+		//If bullet has hit a target, then add 1 bullet to the bulletcount and destroy the bullet
 		if (hitTarget) {
 			gunscript.bulletCount += 1; 
 			Destroy (gameObject);
 		}
 			
-
+		//If the bullet is hit with a hitboxX, play the hit sound and reverse the x direction the bullet is heading
 		if (hitX) {
+			audioSource.PlayOneShot (hitWallSound); 
 			vel.x *= -1f; 
 			hitX = false;
 		}
 
+		//If the bullet is hit with a hitboxY, play the hit sound and reveerse the y direction the bullet is heading
 		if (hitY) {
+			audioSource.PlayOneShot (hitWallSound); 
 			vel.y *= -1f; 
 			hitY = false;
 		}
