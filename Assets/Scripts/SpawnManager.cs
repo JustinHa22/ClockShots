@@ -24,7 +24,7 @@ public class SpawnManager : MonoBehaviour {
 
 			Vector2 spawnPos = new Vector2 (xPos, yPos);
 			if (GameObject.FindGameObjectWithTag ("Target") == null) {
-				Instantiate (Target, spawnPos, Quaternion.identity);
+					Instantiate (Target, spawnPos, Quaternion.identity);
+			}
 		}
-	}
 }

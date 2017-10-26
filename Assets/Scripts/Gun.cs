@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour {
 
+	public Camera mainCamera; 
+
 	public GameObject bullet; 
 	GameObject shotBullet; 
 
@@ -27,7 +29,8 @@ public class Gun : MonoBehaviour {
 	// Update is called once per frame
 	void Update (){
 		//If the left click on the mouse is pressed, shot becomes true instantiating a bullet
-		if (Input.GetMouseButtonDown (0) && bulletCount != 0) {			
+		if (Input.GetMouseButtonDown (0) && bulletCount != 0) {		
+			mainCamera.SendMessage ("shake", null, SendMessageOptions.DontRequireReceiver); 	
 			shot = true; 
 		}
 		//If the right click on the mouse or R is pressed, then reloading becomes true

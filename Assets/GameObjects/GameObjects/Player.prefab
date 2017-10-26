@@ -502,11 +502,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595343db62a334b83893098fd2764bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
   bullet: {fileID: 1330777890503482, guid: 562da308d4085463f865561d1be94611, type: 2}
   Firepoint: {fileID: 4686374727538568}
   bulletCount: 6
   shot: 0
+  shotsound: 0
   reload: 0
+  reloadSound: 0
   bulletList: []
 --- !u!114 &114325281503755178
 MonoBehaviour:
