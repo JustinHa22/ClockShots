@@ -13,7 +13,12 @@ public class SpawnManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		xPos = Random.Range (-7.46f, 7.49f);
+		yPos = Random.Range (-4f, 4.4f);
 
+		Vector2 spawnPos = new Vector2 (xPos, yPos);
+
+		Instantiate (Target, spawnPos, Quaternion.identity);
 	}
 	
 	// Update is called once per frame

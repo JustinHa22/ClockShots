@@ -45,17 +45,31 @@ public class Bullet : MonoBehaviour {
 		//Creates the velocity by getting the world point position of the mouse - the position of the bullet multiplied by the bullet speed
 		vel = ((Vector2)p - (Vector2)transform.position).normalized * shootSpeed;
 
-		velchange1 = (shootSpeed * .9f);
+//		velchange1 = (shootSpeed * .9f);
+//
+//		velchange2 = (shootSpeed * .7f);
+//
+//		velchange3 = (shootSpeed * .5f); 
+//
+//		velchange4 = (shootSpeed * .35f);
+//
+//		velchange5 = (shootSpeed * .2f); 
+//
+//		velchange6 = (shootSpeed * .18f);
 
-		velchange2 = (shootSpeed * .7f);
+		shootSpeed = shootSpeed * 0.7f;
 
-		velchange3 = (shootSpeed * .5f); 
+		velchange1 = shootSpeed;
 
-		velchange4 = (shootSpeed * .35f);
+		velchange2 = shootSpeed;
 
-		velchange5 = (shootSpeed * .2f); 
+		velchange3 = shootSpeed; 
 
-		velchange6 = (shootSpeed * .18f);
+		velchange4 = shootSpeed;
+
+		velchange5 = shootSpeed; 
+
+		velchange6 = shootSpeed;
 
 		gameObject.layer = LayerMask.NameToLayer("Gun");
 

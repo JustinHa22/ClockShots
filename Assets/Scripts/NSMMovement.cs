@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine; 
 
-public class Movement : MonoBehaviour {
+public class NSMMovement : MonoBehaviour {
 
 	public Rigidbody2D rb;
 	public BoxCollider2D box;
@@ -14,8 +14,7 @@ public class Movement : MonoBehaviour {
 
 	public float gravity; 
 
-	public float jumpSpd;
-	bool jump; 
+	public float jumpSpd; 
 
 	bool grounded;
 
@@ -32,13 +31,6 @@ public class Movement : MonoBehaviour {
 		debugPts = new Vector2[2];
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetKeyDown(KeyCode.Space) && grounded == true) {
-			jump = true;
-		}
-	}
 
 	private void FixedUpdate () {
 
@@ -48,36 +40,44 @@ public class Movement : MonoBehaviour {
 		// Right and left are only true if their respective arrow keys are pressed
 		bool right = Input.GetKey(KeyCode.D);
 		bool left = Input.GetKey(KeyCode.A);
+		bool up = Input.GetKey(KeyCode.W);
+		bool down = Input.GetKey(KeyCode.S);
+
+		accel = accel * 3;
 
 		// If right arrow key is pressed, then the velocity will increase by the acceleration wanted
 		if (right == true) {
-			vel.x += accel; 
+			vel.x = accel; 
 		}
 
 		// If left arrow key is pressed, then the velocity will increase by the negative of the acceleration wanted
 		if (left == true) {
-			vel.x += -accel; 
+			vel.x = -accel; 
 		}
 
 		// If neither arrow key is pressed, then the player won't move
 		if (!right && !left) {
 			vel.x = 0; 
 		}
-			
+
 		// This ONE line of code sets the vel.x to the max and min if they go over
 		vel.x = Mathf.Max (Mathf.Min (vel.x, mxAccel), -mxAccel);
 
 		// This code allows the player to move according to the buttons pressed
 
 		//If the player is not grounded, apply gravity
-		if (!grounded) {
-			vel.y -= gravity;
+		if (up == true) {
+			vel.y = accel; 
+		}if (down == true) {
+			vel.y = -accel; 
+		}
+		if (!up && !down) {
+			vel.y = 0; 
 		}
 
-		if (jump && grounded) {
-			vel.y = jumpSpd;
-			jump = false;
-		}
+		vel.y = Mathf.Max (Mathf.Min (vel.y, mxAccel), -mxAccel);
+
+
 		rb.MovePosition ((Vector2)transform.position + vel); 
 
 	}

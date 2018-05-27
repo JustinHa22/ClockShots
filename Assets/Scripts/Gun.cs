@@ -83,11 +83,22 @@ public class Gun : MonoBehaviour {
 		//Gets the size of the bulletList arraylist
 		int size = bulletList.Count; 
 
-		//This forloop will look through all of the bullets in bulletList and see if any come back as false. If one does, it removes that slot from the bulletList
-		for (int i = 0; i <= size; i++){
-			if (bulletList[i] != true){
-				bulletList.RemoveAt(i); 
+//		//This forloop will look through all of the bullets in bulletList and see if any come back as false. If one does, it removes that slot from the bulletList
+//		for (int i = 0; i < size; i++){
+//			Debug.Log ("i = " + i);
+//			Debug.Log ("size = " + size);
+//			if (bulletList[i] != true){
+//				bulletList.RemoveAt(i); 
+//
+//			}
+//		}
+
+		int x = 0;
+		while (x < bulletList.Count) {
+			if (bulletList[x] != true){
+				bulletList.RemoveAt(x); 
 			}
+			x++;
 		}
 
 	}

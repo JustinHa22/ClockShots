@@ -116,21 +116,21 @@ public class GameManager : MonoBehaviour {
 
 		//If target was hit with a bullet, add 1 point
 		if (targetScript.bulletHit) {
-			audioSource.PlayOneShot (targetHit, .3f);
+			audioSource.PlayOneShot (targetHit, .7f);
 			score += 1; 
 		}
 		//If target was hit with a hitbox/melee attack, add 1 point
 		if (targetScript.hitboxHit) {
-			audioSource.PlayOneShot (targetHit, .3f);
+			audioSource.PlayOneShot (targetHit, .7f);
 			score += 1; 
 		}
 
 		//Goes into the gun script and plays the the gunshot sound effect when gun is shot. Also changes the audio clip depending on the bulletCount
 		if (gunscript.shotsound && gunscript.bulletCount > 2f) {
-			audioSource.PlayOneShot (shotSound, 1f); 
+			audioSource.PlayOneShot (shotSound, .4f); 
 			gunscript.shotsound = false;
 		} else if (gunscript.shotsound && gunscript.bulletCount <= 2f) {
-			audioSource.PlayOneShot (slowShotSound, 1f); 
+			audioSource.PlayOneShot (slowShotSound, .4f); 
 			gunscript.shotsound = false;
 		}
 
