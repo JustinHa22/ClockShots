@@ -23,7 +23,7 @@ public class NSMMovement : MonoBehaviour {
 	public float dashVel;
 	private float dashTimer;
 
-	bool dash, isDashing;
+	public bool dash, isDashing;
 
 	Vector2[] debugPts;
 
@@ -131,7 +131,8 @@ public class NSMMovement : MonoBehaviour {
 	}
 		
 	void OnCollisionEnter2D (Collision2D coll){
-		if (coll.gameObject.tag == "Bullet") {
+		if (coll.gameObject.tag == "Bullet" || coll.gameObject.tag == "EnemyBullet") {
+			Debug.Log ("fucking hit");
 			playerDead = true; 
 		}
 	}
